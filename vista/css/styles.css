@@ -1,0 +1,396 @@
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0d1b0e;
+    color: #e8e8e8;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; }
+.oculto { display: none !important; }
+
+/* ===== Colores por equipo ===== */
+.color-santafe { color: #e74c3c; }
+.color-millonarios { color: #3498db; }
+.color-nacional { color: #2ecc71; }
+.color-medellin { color: #e67e22; }
+
+/* ===== Página inicio (landing) ===== */
+.pagina-inicio {
+    background: linear-gradient(135deg, #0d1b0e 0%, #1a3a1a 50%, #0d1b0e 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inicio-overlay { text-align: center; padding: 40px 20px; }
+.inicio-logo { font-size: 5rem; margin-bottom: 16px; }
+.inicio-contenido h1 {
+    font-size: 2.8rem;
+    color: #2ecc71;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: 8px;
+}
+.inicio-subtitulo { font-size: 1.2rem; color: #a0a0a0; margin-bottom: 32px; }
+.inicio-botones { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ===== Botones ===== */
+.btn {
+    padding: 12px 32px; border-radius: 8px; font-weight: 600;
+    display: inline-block; transition: transform 0.15s, box-shadow 0.15s;
+    border: none; cursor: pointer; font-size: 1rem; text-align: center;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: #2ecc71; color: #0d1b0e; }
+.btn-secondary { background: transparent; color: #2ecc71; border: 2px solid #2ecc71; }
+.btn-block { width: 100%; }
+.btn-grande { padding: 16px 40px; font-size: 1.1rem; }
+.btn-nav { background: #e74c3c; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; }
+.btn-whatsapp { background: #25D366; color: #fff; padding: 12px 28px; border-radius: 8px; font-weight: 600; display: inline-block; margin: 12px 0; }
+
+/* ===== Auth (login/registro) ===== */
+.pagina-auth {
+    background: linear-gradient(135deg, #0d1b0e, #1a3a1a);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.auth-contenedor { width: 100%; max-width: 420px; }
+.auth-card {
+    background: #162617;
+    padding: 36px;
+    border-radius: 16px;
+    border: 1px solid #2ecc7133;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+.auth-card-registro { max-width: 440px; }
+.auth-logo { font-size: 3rem; text-align: center; margin-bottom: 8px; }
+.auth-card h2 { text-align: center; color: #2ecc71; margin-bottom: 4px; font-size: 1.3rem; }
+.auth-card h3 { text-align: center; color: #ccc; margin-bottom: 20px; font-size: 1.1rem; }
+.auth-card label { display: block; margin: 12px 0 4px; font-size: 0.9rem; color: #a0a0a0; font-weight: 600; }
+.auth-card input {
+    width: 100%; padding: 10px 12px; border: 1px solid #333;
+    border-radius: 8px; font-size: 1rem; background: #0d1b0e;
+    color: #e8e8e8; outline: none; transition: border 0.2s;
+}
+.auth-card input:focus { border-color: #2ecc71; }
+.auth-card .btn { margin-top: 18px; }
+.auth-links { display: flex; justify-content: space-between; margin-top: 16px; font-size: 0.85rem; }
+.auth-links a { color: #2ecc71; }
+.auth-footer { text-align: center; margin-top: 16px; font-size: 0.9rem; color: #888; }
+.auth-footer a { color: #2ecc71; font-weight: 600; }
+
+/* ===== Avatar selector (imágenes reales de futbolistas) ===== */
+.label-avatar { display: flex; align-items: center; gap: 8px; }
+.icono-avatar-label { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
+
+.avatar-preview-box { text-align: center; margin: 6px 0 18px; }
+.avatar-preview-box img {
+    width: 90px; height: 90px; border-radius: 50%; object-fit: cover;
+    border: 3px solid #2ecc71; box-shadow: 0 0 16px rgba(46,204,113,0.4);
+}
+.avatar-preview-box p { color: #888; font-size: 0.8rem; margin-top: 8px; }
+
+.avatar-selector { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; justify-content: center; }
+.avatar-opcion {
+    width: 54px; height: 54px;
+    border-radius: 50%; border: 3px solid #333;
+    cursor: pointer; transition: all 0.2s; background: #0d1b0e;
+    overflow: hidden; padding: 0;
+}
+.avatar-opcion img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.avatar-opcion:hover { border-color: #2ecc71; transform: scale(1.1); }
+.avatar-opcion.activo { border-color: #2ecc71; box-shadow: 0 0 12px rgba(46,204,113,0.4); }
+.avatar-mini { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; vertical-align: middle; }
+
+/* ===== Modal ===== */
+.modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+    display: flex; align-items: center; justify-content: center; z-index: 200; padding: 20px;
+}
+.modal-contenido {
+    background: #162617; padding: 32px; border-radius: 14px;
+    max-width: 400px; width: 100%; position: relative; border: 1px solid #2ecc7133;
+}
+.modal-contenido h3 { color: #2ecc71; margin-bottom: 12px; }
+.modal-contenido p { color: #aaa; font-size: 0.95rem; margin-bottom: 16px; }
+.modal-cerrar {
+    position: absolute; top: 12px; right: 16px; font-size: 1.6rem;
+    color: #888; cursor: pointer;
+}
+
+/* ===== Alertas ===== */
+.alerta { padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; font-size: 0.9rem; }
+.alerta ul { padding-left: 16px; list-style: disc; }
+.alerta-error { background: #3d1515; color: #f87171; border: 1px solid #7f1d1d; }
+.alerta-exito { background: #153d1f; color: #6ee7a0; border: 1px solid #166534; }
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px; background: #111; position: sticky; top: 0; z-index: 100;
+    border-bottom: 2px solid #2ecc7144;
+}
+.navbar-logo { font-size: 1.2rem; font-weight: 700; color: #2ecc71; white-space: nowrap; }
+.navbar-links {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.navbar-links a { color: #ccc; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; white-space: nowrap; }
+.navbar-links a:hover { color: #2ecc71; }
+.navbar-usuario { display: flex; align-items: center; gap: 8px; margin-left: 8px; }
+.nombre-usuario { color: #2ecc71; font-weight: 600; font-size: 0.85rem; }
+.menu-toggle {
+    display: none; background: none; border: none; color: #2ecc71;
+    font-size: 1.6rem; cursor: pointer;
+}
+
+/* ===== Hero ===== */
+.hero-deportes {
+    text-align: center; padding: 60px 20px 50px;
+    background: linear-gradient(180deg, #0d1b0e, #1a3a1a);
+}
+.hero-deportes h1 { font-size: 2.4rem; color: #2ecc71; margin-bottom: 12px; }
+.hero-deportes p { color: #a0a0a0; max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+/* ===== Secciones generales ===== */
+.seccion { padding: 50px 24px; max-width: 1000px; margin: 0 auto; scroll-margin-top: 80px; }
+.seccion-oscura { background: #111; max-width: 100%; }
+.seccion-oscura > * { max-width: 1000px; margin-left: auto; margin-right: auto; }
+.seccion-titulo {
+    text-align: center; font-size: 1.8rem; color: #2ecc71;
+    margin-bottom: 30px; position: relative;
+}
+.seccion-titulo::after {
+    content: ''; display: block; width: 60px; height: 3px;
+    background: #2ecc71; margin: 10px auto 0; border-radius: 2px;
+}
+
+/* ===== Índice ===== */
+.indice-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.indice-grid .indice-item { width: 200px; }
+.acto-grupo { margin-bottom: 28px; }
+.acto-grupo:last-child { margin-bottom: 0; }
+.acto-etiqueta {
+    color: #2ecc71; font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 10px; opacity: 0.8;
+}
+
+/* ===== Divisores de Acto (entre grupos de secciones) ===== */
+.acto-divisor {
+    text-align: center; padding: 46px 24px 30px; max-width: 1000px; margin: 0 auto;
+}
+.acto-divisor-num {
+    display: inline-block; color: #0d1b0e; background: #2ecc71;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    padding: 4px 14px; border-radius: 20px; margin-bottom: 10px;
+}
+.acto-divisor-titulo {
+    color: #fff; font-size: 1.6rem; margin: 0;
+    border-bottom: 2px solid #2ecc7144; padding-bottom: 16px; display: inline-block;
+}
+.indice-item {
+    display: flex; align-items: center; gap: 12px;
+    background: #162617; padding: 16px 18px; border-radius: 10px;
+    border: 1px solid #2ecc7122; transition: all 0.2s;
+}
+.indice-item:hover { border-color: #2ecc71; transform: translateY(-2px); }
+.indice-num { font-size: 1.4rem; font-weight: 700; color: #2ecc71; }
+
+/* ===== Contenido texto ===== */
+.contenido-texto { max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.05rem; color: #ccc; }
+
+/* ===== Equipos ===== */
+.equipos-selector { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+.equipo-tab {
+    padding: 10px 22px; border-radius: 8px; border: 2px solid #333;
+    background: #162617; color: #ccc; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; font-size: 0.95rem;
+}
+.equipo-tab:hover { border-color: #2ecc71; }
+.equipo-tab.activo { background: #2ecc71; color: #0d1b0e; border-color: #2ecc71; }
+
+/* Todos los paneles de equipo quedan siempre visibles, apilados, separados entre sí */
+.equipo-panel {
+    display: block;
+    padding: 36px 0 44px;
+    border-bottom: 2px solid #2ecc7122;
+    scroll-margin-top: 90px;
+}
+.equipo-panel:last-child { border-bottom: none; padding-bottom: 0; }
+.equipo-nombre { text-align: center; font-size: 1.5rem; margin-bottom: 20px; }
+
+/* Los "sub-tab" ahora son subtítulos de sección dentro de cada equipo, no botones */
+.equipo-subtitulo {
+    text-align: center; color: #2ecc71; font-size: 1.1rem;
+    margin: 30px 0 16px; letter-spacing: 0.5px; text-transform: uppercase;
+    opacity: 0.85;
+}
+.equipo-subtitulo::before { content: '⚽ '; }
+.sub-panel { display: block; margin-bottom: 10px; }
+
+.jugadores-lista { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.jugador {
+    background: #1a3a1a; padding: 8px 16px; border-radius: 6px;
+    font-size: 0.9rem; border: 1px solid #2ecc7122;
+}
+h4 { color: #2ecc71; margin-bottom: 8px; font-size: 0.95rem; text-align: center; }
+
+.cuerpo-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.cuerpo-item {
+    background: #1a3a1a; padding: 14px; border-radius: 8px;
+    font-size: 0.9rem; border: 1px solid #2ecc7122;
+}
+
+.destacados-lista { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.destacado {
+    background: #1a3a1a; padding: 14px 22px; border-radius: 10px;
+    font-size: 1rem; border: 1px solid #ffd70044; display: flex; align-items: center; gap: 8px;
+}
+.destacado-emoji { font-size: 1.3rem; }
+
+.titulos-lista { padding-left: 20px; list-style: disc; }
+.titulos-lista li { margin-bottom: 8px; color: #ccc; font-size: 0.95rem; }
+
+/* ===== Campeonatos ===== */
+.campeonatos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.campeonato-card {
+    background: #162617; padding: 20px; border-radius: 10px; text-align: center;
+    border: 1px solid #2ecc7122;
+}
+.campeonato-anio { display: block; font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.campeonato-equipo { font-weight: 600; font-size: 0.95rem; }
+
+/* ===== Valores ===== */
+.valores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.valor-card {
+    background: #162617; padding: 22px; border-radius: 12px; text-align: center;
+    border: 1px solid #2ecc7122;
+}
+.valor-icono { font-size: 2rem; display: block; margin-bottom: 10px; }
+.valor-card h4 { color: #2ecc71; margin-bottom: 8px; }
+.valor-card p { color: #aaa; font-size: 0.85rem; }
+.socios-box {
+    background: #1a3a1a; padding: 24px; border-radius: 12px;
+    text-align: center; border: 1px solid #2ecc7133;
+}
+.socios-box h4 { color: #2ecc71; margin-bottom: 10px; font-size: 1.1rem; }
+.socios-box p { color: #ccc; font-size: 0.95rem; }
+
+/* ===== Enfrentamientos ===== */
+.fase-titulo { text-align: center; color: #ffd700; margin: 28px 0 16px; font-size: 1.2rem; }
+.partidos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-bottom: 10px; }
+.partido-card {
+    display: flex; align-items: center; justify-content: space-between;
+    background: #162617; padding: 16px 20px; border-radius: 10px;
+    border: 1px solid #2ecc7122;
+}
+.partido-eliminatoria { border-color: #ffd70044; }
+.partido-final { border-color: #ffd700; background: #1a2a10; }
+.equipo-vs { font-weight: 600; font-size: 0.95rem; min-width: 90px; }
+.marcador { font-size: 1.3rem; font-weight: 700; color: #fff; }
+
+.campeon-box {
+    text-align: center; margin-top: 30px; padding: 30px;
+    background: linear-gradient(135deg, #1a3a1a, #0d2b0d);
+    border-radius: 16px; border: 2px solid #ffd700;
+}
+.campeon-corona { font-size: 3.5rem; display: block; margin-bottom: 8px; }
+.campeon-box h2 { color: #ffd700; font-size: 1.3rem; margin-bottom: 6px; }
+.campeon-box h1 { font-size: 2.2rem; }
+
+/* ===== Planteamiento ===== */
+.planteamiento-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.plan-card {
+    background: #162617; padding: 22px; border-radius: 12px;
+    border: 1px solid #2ecc7122; position: relative;
+}
+.plan-num {
+    position: absolute; top: -10px; left: 16px;
+    background: #2ecc71; color: #0d1b0e; width: 28px; height: 28px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem;
+}
+.plan-card h4 { color: #2ecc71; margin-bottom: 8px; margin-top: 6px; }
+.plan-card p { color: #aaa; font-size: 0.9rem; }
+
+/* ===== Entrenamientos ===== */
+.entrenamientos-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.entrena-card {
+    width: 280px; background: #162617; padding: 26px; border-radius: 12px;
+    border: 1px solid #2ecc7122; text-align: center;
+}
+.entrena-icono { font-size: 2.4rem; display: block; margin-bottom: 12px; }
+.entrena-card h4 { color: #2ecc71; margin-bottom: 10px; font-size: 1.1rem; }
+.entrena-card p { color: #aaa; font-size: 0.9rem; text-align: left; }
+
+/* ===== Estadio ===== */
+.estadio-contenido { text-align: center; }
+.estadio-emoji { font-size: 4rem; margin-bottom: 16px; }
+.estadio-contenido h3 { color: #2ecc71; margin-bottom: 12px; font-size: 1.3rem; }
+.estadio-contenido p { color: #ccc; max-width: 600px; margin: 0 auto; }
+
+/* ===== Imágenes ===== */
+.logo-nav { width: 32px; height: 32px; border-radius: 50%; vertical-align: middle; margin-right: 6px; }
+.avatar-nav { width: 30px; height: 30px; border-radius: 50%; }
+.escudo-mini { width: 24px; height: 28px; vertical-align: middle; object-fit: contain; }
+.escudo-grande { width: 80px; height: auto; object-fit: contain; }
+.escudo-xs { width: 22px; height: 26px; object-fit: contain; vertical-align: middle; margin-right: 4px; }
+.escudo-campeon { width: 120px; margin: 16px auto; display: block; }
+.equipo-header { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px; }
+.foto-grupo { width: 100%; max-width: 700px; border-radius: 8px; margin: 0 auto 16px; display: block; }
+.foto-destacado { width: 140px; height: auto; border-radius: 8px; object-fit: cover; }
+.destacados-galeria { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.campeonato-escudo { width: 50px; height: 60px; object-fit: contain; display: block; margin: 0 auto 8px; }
+.estadio-img { width: 100%; max-width: 600px; border-radius: 12px; margin: 16px auto; display: block; border: 2px solid #2ecc7133; }
+
+/* ===== Footer ===== */
+.footer { text-align: center; padding: 40px 20px; background: #0a0a0a; border-top: 2px solid #2ecc7133; }
+.footer-contenido p { color: #888; margin-bottom: 8px; }
+.footer-copy { font-size: 0.8rem; color: #555; margin-top: 12px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .navbar-links { gap: 10px; }
+    .hero-deportes h1 { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .navbar-links {
+        display: none; flex-direction: column; position: absolute;
+        top: 56px; left: 0; right: 0; background: #111;
+        padding: 16px 24px; gap: 12px; border-bottom: 2px solid #2ecc7144;
+    }
+    .navbar-links.abierto { display: flex; }
+    .navbar-usuario { margin-left: 0; margin-top: 8px; padding-top: 12px; border-top: 1px solid #333; }
+}
+
+@media (max-width: 600px) {
+    .inicio-contenido h1 { font-size: 2rem; }
+    .inicio-logo { font-size: 3.5rem; }
+    .hero-deportes { padding: 40px 16px 30px; }
+    .hero-deportes h1 { font-size: 1.6rem; }
+    .seccion { padding: 36px 16px; }
+    .seccion-titulo { font-size: 1.4rem; }
+    .equipos-selector { gap: 6px; }
+    .equipo-tab { padding: 8px 14px; font-size: 0.8rem; }
+    .auth-card { padding: 28px 20px; }
+    .campeon-box h1 { font-size: 1.6rem; }
+    .inicio-botones { flex-direction: column; align-items: stretch; }
+    .btn-grande { padding: 14px 20px; }
+    .partidos-grid { grid-template-columns: 1fr; }
+    .partido-card { padding: 12px 14px; }
+    .equipo-vs { font-size: 0.85rem; min-width: 70px; }
+}
+
+@media (max-width: 380px) {
+    .inicio-contenido h1 { font-size: 1.6rem; }
+    .navbar-logo { font-size: 1rem; }
+}
+
